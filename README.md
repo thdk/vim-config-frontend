@@ -1,41 +1,48 @@
 # Vim config for frontend development
 
+Inspired by [this vim config]( https://github.com/L0stSoul/vim-config) but started from scratch again and 
+evaluated each plugin again to see if alternavies exist.
+
+Some parts of the README and the .vimrc file have been copied from there and might not be working here yet.
+Either intentional, so the README should be updated, or not, so the .vimrc file should be updated.
+
 ## Syntax support
 
-* javascript / typescript
-* jsx / tsx
-* markdown
+* Javascript / Typescript
+* JSX / TSX
+* Markdown
 
 ## Features
 
-### eslint
+### ESlint
 
-### prettier
+### Prettier
 
-### code folding
+### Folding
 
 Use `Space` key to toggle code folding.
 
 Other native vim key maps for folding are:
 
 * za - toggle fold
-* zc — close the fold (where your cursor is positioned)
-* zM — close all folds on current buffer
-* zo — open the fold (where your cursor is positioned)
-* zR — open all folds on current buffer
-* zj — cursor is moved to next fold
-* zk — cursor is moved to previous fold
+* zc - close the fold (where your cursor is positioned)
+* zM - close all folds on current buffer
+* zo - open the fold (where your cursor is positioned)
+* zR - open all folds on current buffer
+* zj - cursor is moved to next fold
+* zk - cursor is moved to previous fold
 
 more fold commands: `:help folding`
 
-### code commenting
+### Comments
 
 [commentary](https://github.com/tpope/vim-commentary)
 
 `gcc` toggles a line in normal mode
+
 `gc` toggles selected lines in visual mode
 
-### autocompletion
+### Autocompletion
 
 [coc](https://github.com/neoclide/coc.nvim)
 
@@ -55,50 +62,59 @@ CoC configuration: (open this file in vim with `:CocConfig`)
 }
 ```
 
-### multi cursor
+### Multi cursor
 
 [vim-visual-multi](https://github.com/mg979/vim-visual-multi)
 
 ctrl-up | ctrl-down to insert multiple cursors
 
-#### git integration
+#### Git integration
 
 [Fugitive](https://github.com/tpope/vim-fugitive)
 
+Simply use `:G` in vim instead of `git` for git CLI commands.
 
-Provides full integration wit git.
+`:G status`
 
-### auto close brackets and quotes
+Provides full integration with git.
+
+### Auto close brackets and quotes
 
 [DelimitMate](https://github.com/Raimondi/delimitMate)
 
-### surround
+### Surround
 
 [surround](https://github.com/tpope/vim-surround)
+
 Provides keystrokes to easily delete, change and add such surroundings in pairs.
 
 __Normal mode__
-csAB  " change surroundingsfrom A to B for this line
-dsA   " delete surrounding A for this entire line
-yssb  " wrap line with parentheses
-ysiwA " wrap word(textblock) with surrounding A
+
+`csAB`  " change surroundingsfrom A to B for this line
+
+`dsA`   " delete surrounding A for this entire line
+
+`yssb`  " wrap line with parentheses
+
+`ysiwA` " wrap word(textblock) with surrounding A
 
 __Visual mode__
+
 Select lines using `V` now type `S` and write the desired surrounding start
 
 `S<div class='container'>`
 
 ## Interface
 
-### improved status and tab bar
+### Improved status and tab bar
 
 [Airline](https://github.com/bling/vim-airline)
 
-### file navigation tree
+### File navigation tree
 
 [NERDTree](https://github.com/preservim/nerdtree)
 
-### fuzzy search
+### Fuzzy search
 
 ```shell
 nnoremap <leader><space> :Files<CR>
@@ -167,11 +183,12 @@ vscode like dark
 
 You just need to place `.vimrc` in your home directory and install plugins:
 
-```
+```shell
 :PlugInstall
 ```
 
 **pro tip: keep your `.vimrc` file up to date with this repo**
+
 Clone the repo, and place symlink to .vimrc in your home directory. E.g.:
 
 ```bash
