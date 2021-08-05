@@ -1,7 +1,7 @@
 # Vim config for frontend development
 
 Inspired by [this vim config]( https://github.com/L0stSoul/vim-config) but started from scratch again and 
-evaluated each plugin again to see if alternavies exist.
+evaluated each plugin again to see if alternatives exist.
 
 Some parts of the README and the .vimrc file have been copied from there and might not be working here yet.
 Either intentional, so the README should be updated, or not, so the .vimrc file should be updated.
@@ -34,17 +34,13 @@ Other native vim key maps for folding are:
 
 more fold commands: `:help folding`
 
-### Comments
-
-[commentary](https://github.com/tpope/vim-commentary)
+### Comments ([commentary](https://github.com/tpope/vim-commentary))
 
 `gcc` toggles a line in normal mode
 
 `gc` toggles selected lines in visual mode
 
-### Autocompletion
-
-[coc](https://github.com/neoclide/coc.nvim)
+### Autocompletion ([coc](https://github.com/neoclide/coc.nvim))
 
 CoC configuration: (open this file in vim with `:CocConfig`)
 
@@ -62,57 +58,53 @@ CoC configuration: (open this file in vim with `:CocConfig`)
 }
 ```
 
-### Multi cursor
-
-[vim-visual-multi](https://github.com/mg979/vim-visual-multi)
+### Multi cursor ([vim-visual-multi](https://github.com/mg979/vim-visual-multi))
 
 ctrl-up | ctrl-down to insert multiple cursors
 
-#### Git integration
+#### Git integration ([Fugitive](https://github.com/tpope/vim-fugitive))
 
-[Fugitive](https://github.com/tpope/vim-fugitive)
-
-Simply use `:G` in vim instead of `git` for git CLI commands.
+Allows to simply use `:G` in vim instead of `git` for git CLI commands.
 
 `:G status`
 
-Provides full integration with git.
+Action | Hotkey
+--------------------------------------------------------- | -----------------
+Git blame on the current line or all selected line        | `leader b`
+Git status                                                | `leader gst`
+Git add/checkout file                                     | `leader gw`
+Git diff                                                  | `leader gd`
+Git commit                                                | `leader gc`
+Git commit all                                            | `leader gca`
+Git commit -a --amend                                     | `leader gcf`
 
-### Auto close brackets and quotes
+### Auto close brackets and quotes ([DelimitMate](https://github.com/Raimondi/delimitMate))
 
-[DelimitMate](https://github.com/Raimondi/delimitMate)
-
-### Surround
-
-[surround](https://github.com/tpope/vim-surround)
+### Surround ([surround](https://github.com/tpope/vim-surround))
 
 Provides keystrokes to easily delete, change and add such surroundings in pairs.
 
 __Normal mode__
 
-`csAB`  " change surroundingsfrom A to B for this line
-
-`dsA`   " delete surrounding A for this entire line
-
-`yssb`  " wrap line with parentheses
-
-`ysiwA` " wrap word(textblock) with surrounding A
-
-__Visual mode__
-
-Select lines using `V` now type `S` and write the desired surrounding start
+`csAB`  change surroundingsfrom A to B for this line
+ 
+`dsA`   delete surrounding A for this entire line
+  
+`yssb`  wrap line with parentheses ( line ) 
+  
+`ysiwA` wrap word(textblock) with surrounding A 
+  
+__Visual mode__ 
+ 
+Select lines using `V` now type `S` and write the desired surrounding start 
 
 `S<div class='container'>`
 
 ## Interface
 
-### Improved status and tab bar
+### Improved status and tab bar ([Airline](https://github.com/bling/vim-airline))
 
-[Airline](https://github.com/bling/vim-airline)
-
-### File navigation tree
-
-[NERDTree](https://github.com/preservim/nerdtree)
+### File navigation tree ([NERDTree](https://github.com/preservim/nerdtree))
 
 ### Fuzzy search
 
@@ -156,14 +148,6 @@ Next completion item                                      | `tab`
 Previous completion item                                  | `shift+tab`
 Undo autocompletion                                       | `ctrl+e`
 Expand snippet                                            | `Enter`
-**▶ Integration with Git**                                |
-Git blame on the current line or all selected line        | `leader b`
-Git status                                                | `leader gst`
-Git add/checkout file                                     | `leader gw`
-Git diff                                                  | `leader gd`
-Git commit                                                | `leader gc`
-Git commit all                                            | `leader gca`
-Git commit -a --amend                                     | `leader gcf`
 **▶ Splits**                                              |
 Move between splits                                       | `leader w`
 Move to the top split                                     | `shift + arrow up`

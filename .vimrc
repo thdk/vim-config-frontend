@@ -331,23 +331,20 @@ map <leader>f :NERDTreeFind<cr>
 "-------------------------
 " Fugitive
 
-" Blame on current line
-nmap <silent> <leader>b :.Gblame<cr>
-" Blame on all selected lines in visual mode
-vmap <silent> <leader>b :Gblame<cr>
+" Blame on current line or all selected lines in visual mode
+map <silent> <leader>b :G blame<cr>
 " Git status
-nmap <silent> <leader>gst :Gstatus<cr>
+nmap <silent> <leader>gst :G<cr>
 " like git add
 nmap <silent> <leader>gw :Gwrite<cr>
 " git diff
-nmap <silent> <leader>gd :Gdiff<cr>
+nmap <silent> <leader>gd :G diff<cr>
 " git commit
-nmap <silent> <leader>gc :Gcommit<cr>
+nmap <silent> <leader>gc :G commit<cr>
 " git commit all
-nmap <silent> <leader>gca :Gcommit -a<cr>
+nmap <silent> <leader>gca :G commit -a<cr>
 " git fixup previous commit
-nmap <silent> <leader>gcf :Gcommit -a --amend<cr>
-
+nmap <silent> <leader>gcf :G commit -a --amend<cr>
 
 "-------------------------
 " DelimitMate
