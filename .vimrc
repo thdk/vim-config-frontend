@@ -144,46 +144,28 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " {{{
   let g:fzf_nvim_statusline = 0 " disable statusline overwriting
-
+  
+  " list all files in current working dir
+  " hint: press C on a folder in NERDTree to set is as working dir
   nnoremap <silent> <leader><space> :Files<CR>
+
+  " git ls-files
+  nnoremap <silent> <leader>gf :GFiles<CR>
+  " git status
+  nnoremap <silent> <leader>gs :GFiles?<CR>
+  " git commits
+  nnoremap <silent> <leader>gl :Commits<CR>
+
   nnoremap <silent> <leader>a :Buffers<CR>
   nnoremap <silent> <leader>A :Windows<CR>
   nnoremap <silent> <leader>; :BLines<CR>
   nnoremap <silent> <leader>o :BTags<CR>
   nnoremap <silent> <leader>O :Tags<CR>
   nnoremap <silent> <leader>? :History<CR>
-  nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR>
-  nnoremap <silent> <leader>. :AgIn
-
-  nnoremap <silent> K :call SearchWordWithAg()<CR>
-  vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
-  nnoremap <silent> <leader>gl :Commits<CR>
   nnoremap <silent> <leader>ga :BCommits<CR>
   nnoremap <silent> <leader>ft :Filetypes<CR>
 
-  imap <C-x><C-f> <plug>(fzf-complete-file-ag)
   imap <C-x><C-l> <plug>(fzf-complete-line)
-
-  function! SearchWordWithAg()
-    execute 'Ag' expand('<cword>')
-  endfunction
-
-  function! SearchVisualSelectionWithAg() range
-    let old_reg = getreg('"')
-    let old_regtype = getregtype('"')
-    let old_clipboard = &clipboard
-    set clipboard&
-    normal! ""gvy
-    let selection = getreg('"')
-    call setreg('"', old_reg, old_regtype)
-    let &clipboard = old_clipboard
-    execute 'Ag' selection
-  endfunction
-
-  function! SearchWithAgInDirectory(...)
-    call fzf#vim#ag(join(a:000[1:], ' '), extend({'dir': a:1}, g:fzf#vim#default_layout))
-  endfunction
-  command! -nargs=+ -complete=dir AgIn call SearchWithAgInDirectory(<f-args>)
 " }}}
 
 let g:coc_global_extensions = ['coc-tsserver']
@@ -311,6 +293,9 @@ let NERDTreeShowHidden=1
 "
 " show current file in NERDTree
 map <leader>f :NERDTreeFind<cr>
+
+" set the current working dir when opening a file/folder from NERDTree
+let g:NERDTreeChDirMode = 2
 
 "-------------------------
 " Fugitive
