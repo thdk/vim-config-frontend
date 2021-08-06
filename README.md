@@ -40,7 +40,7 @@ more fold commands: `:help folding`
 
 `gc` toggles selected lines in visual mode
 
-### Code completion, intellisense, code actions, formatting and more[coc](https://github.com/neoclide/coc.nvim))
+### Code completion, intellisense, code actions, formatting and more ([coc](https://github.com/neoclide/coc.nvim))
 
 Action | Hotkey
 --------------------------------------------------------- | -----------------
@@ -79,7 +79,7 @@ Open Coc configuration file in vim with `:CocConfig`
 
 ctrl-up | ctrl-down to insert multiple cursors
 
-#### Git integration ([Fugitive](https://github.com/tpope/vim-fugitive))
+### Git integration ([Fugitive](https://github.com/tpope/vim-fugitive))
 
 Allows to simply use `:G` in vim instead of `git` for git CLI commands.
 
@@ -97,7 +97,7 @@ Git commit -a --amend                                     | `leader gcf`
 
 ### Auto close brackets and quotes ([DelimitMate](https://github.com/Raimondi/delimitMate))
 
-### Surround ([surround](https://github.com/tpope/vim-surround))
+### Surround ([Surround](https://github.com/tpope/vim-surround))
 
 Provides keystrokes to easily delete, change and add such surroundings in pairs.
 
