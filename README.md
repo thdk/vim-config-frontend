@@ -40,9 +40,26 @@ more fold commands: `:help folding`
 
 `gc` toggles selected lines in visual mode
 
-### Autocompletion ([coc](https://github.com/neoclide/coc.nvim))
+### Code completion, intellisense, code actions, formatting and more[coc](https://github.com/neoclide/coc.nvim))
 
-CoC configuration: (open this file in vim with `:CocConfig`)
+Action | Hotkey
+--------------------------------------------------------- | -----------------
+**▶ Coding features**                                     |
+Go to type definition/declaration                         | `leader cd`
+Find all references of variable under coursor             | `leader cf`
+Show type of variable under cursor                        | `leader ct`
+Show docs for entity under cursor                         | `leader cd`
+Smart rename an entity under coursor and all refs to it   | `leader cr`
+**▶ Code completion**                                     |
+Next completion item                                      | `tab`
+Previous completion item                                  | `shift+tab`
+Undo autocompletion                                       | `ctrl+e`
+**▶ Code diagnostics**                                    |
+Previous error/warning                                    | `leader [g`
+Next error/warning                                        | `leader ]g`
+**CoC configuration:**
+
+Open Coc configuration file in vim with `:CocConfig`
 
 ```json
 {
@@ -106,6 +123,10 @@ Select lines using `V` now type `S` and write the desired surrounding start
 
 ### File navigation tree ([NERDTree](https://github.com/preservim/nerdtree))
 
+Action | Hotkey
+--------------------------------------------------------- | -----------------
+Show current file in NERDtre                              | `leader f`
+
 ### Fuzzy search
 
 ```shell
@@ -136,18 +157,6 @@ Action | Hotkey
 --------------------------------------------------------- | -----------------
 **▶ File operations**                                     |
 Recent Files List                                         | `leader m`
-Show current file in NERDtre                              | `leader f`
-**▶ Coding features**                                     |
-Go to type definition/declaration                         | `leader cd`
-Find all references of variable under coursor             | `leader cf`
-Show type of variable under cursor                        | `leader ct`
-Show docs for entity under cursor                         | `leader cd`
-Smart rename an entity under coursor and all refs to it   | `leader cr`
-**▶ Code completion**                                     |
-Next completion item                                      | `tab`
-Previous completion item                                  | `shift+tab`
-Undo autocompletion                                       | `ctrl+e`
-Expand snippet                                            | `Enter`
 **▶ Splits**                                              |
 Move between splits                                       | `leader w`
 Move to the top split                                     | `shift + arrow up`
@@ -160,8 +169,7 @@ Make split bigger horizontally                            | `shift + ctrl + arro
 Make split smaller horizontally                           | `shift + ctrl + arrow left`
 
 ## Color scheme
-
-vscode like dark
+[vim code dark](https://github.com/tomasiser/vim-code-dark)'
 
 ## Easy installation
 
