@@ -127,27 +127,22 @@ Action | Hotkey
 --------------------------------------------------------- | -----------------
 Show current file in NERDtre                              | `leader f`
 
-### Fuzzy search
+### Fuzzy search ([FZF](https://github.com/junegunn/fzf))
 
-```shell
-nnoremap <leader><space> :Files<CR>
-nnoremap <leader>a :Buffers<CR>
-nnoremap <leader>A :Windows<CR>
-nnoremap <leader>; :BLines<CR>
-nnoremap <leader>o :BTags<CR>
-nnoremap <leader>O :Tags<CR>
-nnoremap <leader>? :History<CR>
-nnoremap <leader>/ :execute 'Ag ' . input('Ag/')<CR>
-nnoremap <leader>. :AgIn
-nnoremap K :call SearchWordWithAg()<CR>
-vnoremap K :call SearchVisualSelectionWithAg()<CR>
-nnoremap <leader>gl :Commits<CR>
-nnoremap <leader>ga :BCommits<CR>
-nnoremap <leader>ft :Filetypes<CR>
+Opens a popup window to perform any search and narrow down search results using fuzzy search.
 
-imap <C-x><C-f> <plug>(fzf-complete-file-ag)
-imap <C-x><C-l> <plug>(fzf-complete-line)
-```
+Action | Hotkey
+--------------------------------------------------------- | -----------------
+Files in current working dir                              | `leader space`
+(Hint: press C on directory in NERDTree to set it as CWD)
+Files in GIT working tree and index                       | `leader gf`
+Files listed in 'git status'                              | `leader gs`
+Commits                                                   | `leader gl`
+Commits with changes for current buffer / visual selection| `leader ga`
+Buffers                                                   | `leader a`
+Windows                                                   | `leader A`
+Lines in current buffer                                   | `leader ;`
+Tags in current buffer                                    | `leader o`
 
 ## Hotkeys
 
