@@ -290,7 +290,10 @@ nmap <leader>f  <Plug>(coc-format-selected)
 " NERDTree
 " show dotfiles (ex .eslintrc) by default
 let NERDTreeShowHidden=1
-"
+
+" Set nerdtree width to be used when resizing windows
+let g:NERDTreeWinSize=40
+
 " show current file in NERDTree
 map <leader>f :NERDTreeFind<cr>
 
