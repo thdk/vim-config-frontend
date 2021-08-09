@@ -133,6 +133,7 @@ Opens a popup window to perform any search and narrow down search results using 
 
 Action | Hotkey
 --------------------------------------------------------- | -----------------
+Files content (aka find in files)                         | `leader ff`
 Files in current working dir                              | `leader space`
 (Hint: press C on directory in NERDTree to set it as CWD)
 Files in GIT working tree and index                       | `leader gf`

@@ -143,29 +143,44 @@ Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " {{{
-  let g:fzf_nvim_statusline = 0 " disable statusline overwriting
-  
-  " list all files in current working dir
-  " hint: press C on a folder in NERDTree to set is as working dir
-  nnoremap <silent> <leader><space> :Files<CR>
+let g:fzf_nvim_statusline = 0 " disable statusline overwriting
 
-  " git ls-files
-  nnoremap <silent> <leader>gf :GFiles<CR>
-  " git status
-  nnoremap <silent> <leader>gs :GFiles?<CR>
-  " git commits
-  nnoremap <silent> <leader>gl :Commits<CR>
+function! RipgrepFzf(query, fullscreen)
+let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+ let initial_command = printf(command_fmt, shellescape(a:query))
+ let reload_command = printf(command_fmt, '{q}')
+ let spec = {'options': ['--keep-right', '--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+ call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
 
-  nnoremap <silent> <leader>a :Buffers<CR>
-  nnoremap <silent> <leader>A :Windows<CR>
-  nnoremap <silent> <leader>; :BLines<CR>
-  nnoremap <silent> <leader>o :BTags<CR>
-  nnoremap <silent> <leader>O :Tags<CR>
-  nnoremap <silent> <leader>? :History<CR>
-  nnoremap <silent> <leader>ga :BCommits<CR>
-  nnoremap <silent> <leader>ft :Filetypes<CR>
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
-  imap <C-x><C-l> <plug>(fzf-complete-line)
+" find in files
+nnoremap <silent> <leader>ff :RG<CR>
+
+" list all files in current working dir
+" hint: press C on a folder in NERDTree to set is as working dir
+nnoremap <silent> <leader><space> :Files<CR>
+
+" git ls-files
+nnoremap <silent> <leader>gf :GFiles<CR>
+" git status
+nnoremap <silent> <leader>gs :GFiles?<CR>
+" git commits
+nnoremap <silent> <leader>gl :Commits<CR>
+
+nnoremap <silent> <leader>a :Buffers<CR>
+nnoremap <silent> <leader>A :Windows<CR>
+nnoremap <silent> <leader>; :BLines<CR>
+nnoremap <silent> <leader>o :BTags<CR>
+nnoremap <silent> <leader>O :Tags<CR>
+nnoremap <silent> <leader>? :History<CR>
+nnoremap <silent> <leader>ga :BCommits<CR>
+nnoremap <silent> <leader>ft :Filetypes<CR>
+
+imap <C-x><C-l> <plug>(fzf-complete-line)
+
+
 " }}}
 
 let g:coc_global_extensions = ['coc-tsserver']
