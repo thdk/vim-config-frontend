@@ -169,6 +169,8 @@ Make split smaller horizontally                           | `shift + ctrl + arro
 
 ## Easy installation
 
+Install plugin manager [PlugInstall](https://github.com/junegunn/vim-plug)
+
 You just need to place `.vimrc` in your home directory and install plugins:
 
 ```shell
